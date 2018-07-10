@@ -11,7 +11,11 @@ namespace LRC
         static void Main(string[] args)
         {
             MainForm main = new MainForm();
-            main.Show();
+            Task.Factory.StartNew(() =>
+           {
+               main.Show();
+           });
+            Console.Read();
 
         }
     }
